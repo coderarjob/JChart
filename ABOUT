@@ -10,7 +10,7 @@ Features:
 *	Chart title (optionally shown, default is ON, with customization in LookAndFeel class.
 *	Chart does automatic padding calculation based on wether legend or tite is visible and 
 	the width of y axis lables.
-*	In both the axis some of the labels are not printed, if there is not enough space to plac
+*	In both the axis some of the labels are not printed, if there is not enough space to place
 	them.
 
 Features in the future:
