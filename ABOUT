@@ -6,15 +6,15 @@ Features:
 *	Multiple series
 *	Two axis chart, with auto interval calculation in both axis.
 *	Easy way to change look and feel of the chart with two built-in styles; LIGHT and DARK.
-*	Auto generated ledgend (if enabled)
+*	Auto generated legend (if enabled)
 *	Chart title (optionally shown, default is ON, with customization in LookAndFeel class.
-*	Chart does automatic padding calculation based on wether legend or tite is visible and 
-	the width of y axis lables.
+*	Chart does automatic padding calculation based on if legend or title is visible and 
+	the width of y axis labels.
 *	In both the axis some of the labels are not printed, if there is not enough space to place
 	them.
 
 Features in the future:
 *	Four axis layout, 2 X and 2 Y axis.
-*	Logrithmic layout
+*	Logarithmic layout
 *	Ability to have chart types, like PIE, HISTOGRAM, LINE (currently the only type) and so on.
 
