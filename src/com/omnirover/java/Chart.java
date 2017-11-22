@@ -242,6 +242,8 @@ public class Chart extends JPanel implements ComponentListener {
 		Point2D prevPoint = null;
 		series.getGraphics().setColor(series.getColor());
 		
+		int halfDotDia = series.getDotPlotDotDiameter()/2;
+		
 		for(Point2D thepoint:series.getPoints())
 		{
 			thepoint = getScreenCoordinates(thepoint.getX(), thepoint.getY());
@@ -249,10 +251,16 @@ public class Chart extends JPanel implements ComponentListener {
 				prevPoint = thepoint;
 			}
 			
-			series.getGraphics().drawLine((int)prevPoint.getX(), (int)prevPoint.getY(), 
+			if (series.getPlotType() == PlotType.LINE){
+				series.getGraphics().drawLine((int)prevPoint.getX(), (int)prevPoint.getY(), 
 					(int)thepoint.getX(), (int)thepoint.getY());
-
-			prevPoint = thepoint;
+					
+				prevPoint = thepoint;
+			}
+			else{
+				series.getGraphics().fillOval((int)thepoint.getX() - halfDotDia,(int)thepoint.getY() - halfDotDia,series.getDotPlotDotDiameter(),series.getDotPlotDotDiameter());
+			}
+			
 			//mark(series.getGraphics(),(int)thepoint.getX(),(int)thepoint.getY());
 		}
 	}

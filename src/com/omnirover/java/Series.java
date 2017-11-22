@@ -14,6 +14,8 @@ public class Series {
 	private Graphics2D g;
 	private Color color;
 	private String seriesTitle;
+	private PlotType plotType;
+	private int dotPlotDotDiameter;
 	
 	public Series(Color c)
 	{
@@ -25,6 +27,8 @@ public class Series {
 		this.color = c;
 		points = new ArrayList<Point2D>();
 		seriesTitle = title;
+		dotPlotDotDiameter = 4;
+		plotType = PlotType.LINE;
 	}
 	
 	public Color getColor()
@@ -36,6 +40,27 @@ public class Series {
 	{
 		color = c;
 	}
+	
+	public int getDotPlotDotDiameter()
+	{
+		return dotPlotDotDiameter;
+	}
+	
+	public void setDotPlotDotDiameter(int dia)
+	{
+		dotPlotDotDiameter = dia;
+	}
+	
+	public PlotType getPlotType()
+	{
+		return plotType;
+	}
+	
+	public void setPlotType(PlotType t)
+	{
+		plotType = t;
+	}
+	
 	
 	protected BufferedImage getBitmap()
 	{
@@ -76,4 +101,5 @@ public class Series {
 	public void setSeriesTitle(String seriesTitle) {
 		this.seriesTitle = seriesTitle;
 	}
+	
 }
