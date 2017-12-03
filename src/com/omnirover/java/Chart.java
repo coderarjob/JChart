@@ -23,6 +23,8 @@ import java.util.List;
 public class Chart extends JPanel implements ComponentListener {
 	
 	//--------------Private fields------------------------------------
+	private final String DEFAULT_CHART_TITLE = "Untitled";
+
 	private LookAndFeel style;
 	
 	private BufferedImage chartControlImg;
@@ -190,7 +192,8 @@ public class Chart extends JPanel implements ComponentListener {
 		XAxis = createXAxis();
 		YAxis = createYAxis();
 		style = new LookAndFeel();
-		
+		setChartTitle(DEFAULT_CHART_TITLE);
+
 		XAxis.setRange(new Range(-1,10));
 		XAxis.setLabelInterval(10);
 		XAxis.setShowGridLines(true);
@@ -306,6 +309,9 @@ public class Chart extends JPanel implements ComponentListener {
 		
 		if (this.isChartTitleVisibility())
 		{
+			if (this.chartTitle == null) 
+				this.chartTitle = DEFAULT_CHART_TITLE;
+
 			Dimension strSize = getStringSize(g, style.getTitleFont(),this.chartTitle);
 			int titleX,titleY;
 			titleX = chartarea.x + chartarea.width/2 - strSize.width/2;
